@@ -26,6 +26,10 @@ public class ProductServiceImpl implements ProductService {
 	public List<String> findAllName() {
 		return dao.findAllName();
 	}
+	@Override
+	public List<Integer> findAllId() {
+		return dao.findAllId();
+	}
 
 	@Override
 	public Product findById(int id) throws ProductNotFoundException {

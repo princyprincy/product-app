@@ -16,6 +16,7 @@ public class ProductClient {
 
 		Set<Product> productSet;
 		List<String> namelist;
+		List<Integer> idlist;
 		ProductService service = new ProductServiceImpl();
 		String date;
 		DateTimeFormatter dateFormat;
@@ -30,6 +31,8 @@ public class ProductClient {
 		System.out.println(" 8. Deleting a Product By Id");
 		System.out.println(" 9. Deleting a Product By ExpiryDate");
 		System.out.println(" 10. Deleting a Product By Name");
+		System.out.println(" 11. Find All Product Names");
+		System.out.println(" 12. Find All Products Id");
 
 		System.out.println("Enter the choice");
 		Scanner scanner = new Scanner(System.in);
@@ -145,7 +148,13 @@ public class ProductClient {
 			namelist = service.findAllName();
 			System.out.println(namelist);
 			break;
+		case 12:
+			System.out.println("Find All Product Id");
+			idlist = service.findAllId();
+			System.out.println(idlist);
+			break;
 		
+
 		default:
 			break;
 		}

@@ -10,6 +10,7 @@ public interface ProductDAO {
 	Set<Product> findAll();
 
 	List<String> findAllName();
+	List<Integer> findAllId();
 	
 	Product findById(int id);
 
