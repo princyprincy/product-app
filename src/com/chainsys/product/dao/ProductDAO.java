@@ -11,6 +11,7 @@ public interface ProductDAO {
 	Product findById(int id);
 
 	Product findByName(String name);
+	Product findByDate(LocalDate expiryDate);
 
 	void save(Product product);
 
