@@ -1,6 +1,7 @@
 package com.chainsys.product.service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.dao.ProductDAO;
@@ -19,6 +20,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public Set<Product> findAll() {
 		return dao.findAll();
+	}
+
+	@Override
+	public List<String> findAllName() {
+		return dao.findAllName();
 	}
 
 	@Override
@@ -109,5 +115,6 @@ public class ProductServiceImpl implements ProductService {
 		}
 
 	}
+	
 
 }

@@ -2,6 +2,7 @@ package com.chainsys.product.test;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -14,6 +15,7 @@ public class ProductClient {
 	public static void main(String[] args) {
 
 		Set<Product> productSet;
+		List<String> namelist;
 		ProductService service = new ProductServiceImpl();
 		String date;
 		DateTimeFormatter dateFormat;
@@ -115,6 +117,7 @@ public class ProductClient {
 				System.out.println(productSet);
 			} catch (ProductNotFoundException e) {
 			}
+			break;
 		case 9:
 			System.out.println("Deleting a Product By Date");
 			try {
@@ -125,6 +128,7 @@ public class ProductClient {
 				System.out.println(productSet);
 			} catch (ProductNotFoundException e) {
 			}
+			break;
 		case 10:
 			System.out.println("Deleting a Product By Name");
 			System.out.println("Enter the Product Name");
@@ -135,7 +139,13 @@ public class ProductClient {
 				System.out.println(productSet);
 			} catch (ProductNotFoundException e) {
 			}
-
+			break;
+		case 11:
+			System.out.println("Find All Products Names");
+			namelist = service.findAllName();
+			System.out.println(namelist);
+			break;
+		
 		default:
 			break;
 		}

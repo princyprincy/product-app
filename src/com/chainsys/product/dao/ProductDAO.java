@@ -1,6 +1,7 @@
 package com.chainsys.product.dao;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.model.Product;
@@ -8,9 +9,12 @@ import com.chainsys.product.model.Product;
 public interface ProductDAO {
 	Set<Product> findAll();
 
+	List<String> findAllName();
+	
 	Product findById(int id);
 
 	Product findByName(String name);
+
 	Product findByDate(LocalDate expiryDate);
 
 	void save(Product product);
