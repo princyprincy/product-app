@@ -18,6 +18,7 @@ public class ProductClient {
 		String date;
 		DateTimeFormatter dateFormat;
 		int id;
+		
 		System.out.println("Enter the choice");
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
@@ -94,7 +95,6 @@ public class ProductClient {
 			break;
 		case 8:
 			System.out.println("Deleting a Product");
-//			date = scanner.next();
 			try {
 				 	date = "06/05/2021";
 					dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -109,12 +109,21 @@ public class ProductClient {
 			 	date = "06/05/2021";
 				dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 				Product product=service.findByDate(LocalDate.parse(date,dateFormat));
-
 				System.out.println(product);
 			} catch (ProductNotFoundException e) {
 			}
 			break;
-		
+		case 10:
+			System.out.println("Deleting a Product");
+			System.out.println("Enter the Product Name");
+			name = scanner.next();
+			try {
+				service.delete_name(name);
+				productSet = service.findAll();
+				System.out.println(productSet);
+			} catch (ProductNotFoundException e) {
+			}
+
 		default:
 			break;
 		}

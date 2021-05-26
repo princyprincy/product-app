@@ -147,13 +147,23 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 
 	}
+	@Override
+	public void delete_name(String name) {
+		try {
+			pstmt = con.prepareStatement("delete product_2611 where name=?");
+			pstmt.setString(1, name);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	@Override
 	public void delete_date(LocalDate expiryDate) {
 		try {
 			pstmt = con.prepareStatement("delete product_2611 where expiry_date=?");
 			pstmt.setDate(1, Date.valueOf(expiryDate));
-
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
